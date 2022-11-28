@@ -1,0 +1,73 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#contPrin {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-attachment: fixed;
+    overflow: scroll;
+    background: #654ea3;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #eaafc8, #654ea3);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #eaafc8, #654ea3);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#options {
+    margin: 0.5em;
+    padding: 2em;
+}
+
+#datos {
+    margin: 0.5em;
+    padding: 2em;
+}
+
+button {
+    margin: 1em;
+}
+
+form {
+    margin: auto;
+    padding: 2%;
+    background-color: #f0eeee;
+    border-radius: 20px;
+    width: 80%;
+}
+
+.btn {
+    margin: 1%;
+}
+
+h1 {
+    text-align: center;
+    margin: 1.6em;
+    background-color: #756897;
+    padding: 1em;
+    border-radius: 20px;
+}
+
+#contBtn {
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
+    gap: 1em;
+}
+
+button {
+    margin: 1em;
+}
+
+#contDat {
+    padding: 0.5em;
+    text-align: center;
+}
+
+mat-card {
+    margin-bottom: 2em;
+}

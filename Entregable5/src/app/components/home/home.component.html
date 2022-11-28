@@ -1,0 +1,84 @@
+<div id="contPrin">
+    <div id="options">
+        <h1>Formulario</h1>
+        <form>
+            <div id="contDat">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput id="nombre" [(ngModel)]="selectedPersona.nombre" name="nombre">
+                </mat-form-field>
+                <br>
+                <br>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Apellidos</mat-label>
+                    <input matInput id="password" [(ngModel)]="selectedPersona.apellidos" name="apellidos">
+                </mat-form-field>
+                <br>
+                <br>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>DNI</mat-label>
+                    <input matInput id="password" [(ngModel)]="selectedPersona.dni" name="dni">
+                </mat-form-field>
+
+                <br>
+                <br>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Color Favorito</mat-label>
+                    <input matInput id="password" [(ngModel)]="selectedPersona.colorFavorito" name="color">
+                </mat-form-field>
+                <br>
+                <br>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Edad</mat-label>
+                    <input type="number" matInput id="password" [(ngModel)]="selectedPersona.edad" name="edad">
+                </mat-form-field>
+
+                <br>
+                <br>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Fecha nacimiento</mat-label>
+                    <input type="date" matInput id="password" [(ngModel)]="selectedPersona.cumpleannos" name="fecha">
+                </mat-form-field>
+
+                <h4>Genero</h4>
+                <mat-form-field appearance="fill">
+                    <select matNativeControl required [(ngModel)]="selectedPersona.sexo" name="sexo">
+                   
+                    <option selected value="hombre">Hombre</option>
+                    <option value="mujer">Mujer</option>
+                    <option value="otro">Otro</option>
+                    <option value="no_especificado">No especificado</option>
+                </select>
+                </mat-form-field>
+            </div>
+            <div id="contBtn">
+                <button mat-raised-button color="primary" (click)="addOrEdit()">Añadir</button>
+                <button mat-raised-button color="accent" *ngIf="selectBoolean" (click)="edit()">Editar</button>
+                <button mat-raised-button color="warn" *ngIf="selectBoolean" mat-button (click)="delete(selectedPersona.nombre)">Eliminar</button>
+            </div>
+
+        </form>
+        <button mat-raised-button color="primary" routerLink="/login">Volver</button>
+    </div>
+
+    <div id="datos">
+        <h1>Personas</h1>
+        <div *ngFor="let persona of personasArray">
+            <mat-card>
+                <mat-card-title>{{persona.nombre}} {{persona.apellidos}}</mat-card-title>
+                <mat-card-subtitle>DNI: {{persona. dni}}</mat-card-subtitle>
+                <h3>Edad : {{persona.edad}}</h3>
+                <h3>Color : {{persona.colorFavorito}}</h3>
+                <h3>Sexo : {{persona.sexo}}</h3>
+                <h3>Nacimiento : {{persona.cumpleannos}}</h3>
+
+                <mat-card-actions align="end">
+                    <button mat-raised-button color="accent" [class.active]="persona == selectedPersona" (click)="editPersona(persona)">Editar</button>
+
+                </mat-card-actions>
+            </mat-card>
+        </div>
+
+    </div>
+
+</div>
